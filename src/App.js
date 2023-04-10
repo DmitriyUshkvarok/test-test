@@ -1,12 +1,15 @@
 import React from 'react';
 import HomePage from './Containers/HomePage/HomePage'
 import {  Route, Routes } from 'react-router-dom';
-import CharactersPage from './Containers/CharactersPage/CharactersPage';
+// import CharactersPage from './Containers/CharactersPage/CharactersPage';
 import Root from './Containers/CharactersPage/Root/Root';
 import Error from './Components/Error404/Error';
 import PersonPage from './Containers/PersonPage/PersonPage';
 import SearchPage from './Containers/SearchPage/SearchPage';
 import FavouritePage from './Containers/FavouritePage/FavouritePage';
+import { Suspense,lazy } from 'react';
+
+const Characters = lazy(()=>import('./Containers/CharactersPage/CharactersPage.js'))
 
 // const App = () => {
 
@@ -35,7 +38,7 @@ const App = () => {
       <Root />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="characters" element={<CharactersPage />} />
+        <Route path="characters" element={<Characters />} />
         <Route path="characters/:id" element={<PersonPage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="favourites" element={<FavouritePage />} />
