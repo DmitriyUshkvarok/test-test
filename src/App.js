@@ -1,6 +1,6 @@
 import React from 'react';
 import HomePage from './Containers/HomePage/HomePage'
-import { createBrowserRouter, RouterProvider, Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import CharactersPage from './Containers/CharactersPage/CharactersPage';
 import Root from './Containers/CharactersPage/Root/Root';
 import Error from './Components/Error404/Error';
